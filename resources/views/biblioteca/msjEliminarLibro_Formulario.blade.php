@@ -6,7 +6,7 @@
 
 @if ($libro->disponible == 'SI')
     @component('components/alert', ['type' => 'success'])
-        <p>El libro se Encuentra Disponible</p>
+        <p class="bg-red-500 py-8 text-2xl w-7/12 rounded-md mx-auto flex justify-center font-bold mt-60 text-gray-800">El libro se Encuentra Disponible</p>
     @endcomponent
 
 @else

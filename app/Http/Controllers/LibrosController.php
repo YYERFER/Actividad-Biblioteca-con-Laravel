@@ -101,6 +101,9 @@ class LibrosController extends Controller
                 }
 
 
+
+//Busquedas de Libros
+
     public function searchBooksGender(Request $request){
         $genero = Libros::searchBookGender( $request->input('genero') );
         if($genero!==''){
@@ -138,6 +141,18 @@ class LibrosController extends Controller
     public function searchBooksDate(Request $request){
         $date = Libros::searchBookDate( $request->input('anio') );
         if($date!==''){
+        return view('biblioteca/showAllLibros', [ 'libros' => $date ]);
+        }else{
+            return Redirect::to('/showBooks');
+        }
+    }
+
+    public function searchBooksDateInterval(Request $request){
+
+        if($request->input('desde')){
+            $date = Libros::searchBookDateInterval( $request->input('desde'), $request->input('hasta') );
+        }
+        if($request->input('desde') or $request->input('hasta')){
         return view('biblioteca/showAllLibros', [ 'libros' => $date ]);
         }else{
             return Redirect::to('/showBooks');

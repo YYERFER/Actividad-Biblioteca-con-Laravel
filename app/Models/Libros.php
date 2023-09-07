@@ -79,6 +79,12 @@ class Libros extends Model
         return Libros::where('anio_publicacion','LIKE','%'.$date.'%')->get();
     }
 
+    public static function searchBookDateInterval($desde, $hasta){
+        return Libros::where('anio_publicacion','>=', $desde)
+                     ->where('anio_publicacion','<=', $hasta)
+                     ->get();
+    }
+
 
 
     // public static function create($titulo, $autor, $anio_publicacion, $genero, $disponible){

@@ -57,6 +57,7 @@ Route::post('/searchBooksGender', [LibrosController::class, 'searchBooksGender']
 Route::post('/searchBooksTitle', [LibrosController::class, 'searchBooksTitle'])->name('searchBooksTitle');
 Route::post('/searchBooksAuthor', [LibrosController::class, 'searchBooksAuthor'])->name('searchBooksAuthor');
 Route::post('/searchBooksDate', [LibrosController::class, 'searchBooksDate'])->name('searchBooksDate');
+Route::post('/searchBooksDateInterval', [LibrosController::class, 'searchBooksDateInterval'])->name('searchBooksDateInterval');
 
 
 //Prueba de alerta
